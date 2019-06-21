@@ -35,8 +35,11 @@ $('#modal-delete').on('click', function(){
        url: 'deletepost/' + postId,
        // data: {postId: '12'}
    }).done(function(msg){
-       $(postBodyElement).hide();
        $('#delete-modal').modal('hide');
+       $(postBodyElement).hide();
+       $('.deltoast').find('.toast-body').find('.notifp').text(msg['message']);
+       // console.log(msg['message']);
+       $('.deltoast').toast('show');
    });
 });
 
