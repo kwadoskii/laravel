@@ -108,7 +108,7 @@ class PostController extends Controller
     {
         $message = $request['message'];
 
-        Session::put('message', $message);
+        Session::flash('message', $message);
         return response()->json(['message' => $message]);
 //        return redirect()->route('dashboard')->with(['message' => $message]);
     }

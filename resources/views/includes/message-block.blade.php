@@ -28,7 +28,7 @@
     </div>
 </div>
 
-{{ Session::forget('message') }}
+{{--{{ Session::forget('message') }}--}}
 @endif
 
 

@@ -13,7 +13,13 @@
     @include('includes.message-block')
     {{--    <p>{{ $test('000') }}</p>--}}
     <section class="row new-post">
-        <div class="col-md-8 offset-md-2">
+        <div class="col-sm-3 pl-5" style="
+    position: fixed; ">
+            <img src="http://3.bp.blogspot.com/-XDZlbxUT6wk/UAfxAeG9YAI/AAAAAAAAA3o/Woqx5XuAFTc/s1600/Dark-Knight_Rises_Dan-Cohen_14.jpg"
+                 width='100%' height="560px" alt='Advert 1'>
+        </div>
+
+        <div class="col-md-6 offset-md-3">
             <header><h5>What do you have in mind</h5></header>
             <form action="{{ route('post.create') }}" method="post">
                 <div class="form-group">
@@ -27,7 +33,7 @@
     </section>
 
     <section class="row posts">
-        <div class="col-md-8 offset-md-2">
+        <div class="col-md-6 offset-md-3">
             <header><h4>Others Said..</h4></header>
             @foreach($posts as $post)
                 <article class="post" data-postid="{{ $post->id }}">
@@ -47,17 +53,16 @@
                     </div>
                 </article>
             @endforeach
-            <nav>
+            <nav class="pt-5">
                 {{ $posts->links() }}
             </nav>
 
         </div>
     </section>
 
-
     {{--    edit modal--}}
-    <div class="modal" tabindex="-1" role="dialog" id="edit-modal">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal fade" tabindex="-1" role="dialog" id="edit-modal">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Edit Post</h5>
@@ -80,7 +85,7 @@
     </div>
 
     {{--    delete modal--}}
-    <div class="modal" tabindex="-1" role="dialog" id="delete-modal">
+    <div class="modal fade" tabindex="-1" role="dialog" id="delete-modal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

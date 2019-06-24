@@ -19,12 +19,13 @@
             </div>
             <div class="form-group">
                 <label for="image">Image (.jpg only)</label>
-                <input class="form-control" type="file" name="image" id="image">
+                <input class="form-control-file" type="file" name="image" id="image">
             </div>
             <button type="submit" class="btn btn-success">Save Changes</button>
             <input type="hidden" name="_token" value="{{ Session::token() }}">
         </form>
     </div>
+
     @if(Storage::disk('local')->has($user->first_name . '-' . $user->id . '.jpg'))
         <section class="row new-post">
             <div class="col-md-7 offset-md-2">
