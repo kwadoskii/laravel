@@ -8,6 +8,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
@@ -48,6 +49,7 @@ class PostController extends Controller
         }
         $post->delete();
 //        return redirect()->route('dashboard')->with(['message' => 'Deleted successfully!']);
+//        Session::put('message', 'Deleted successfully!');
         return response()->json(['message' => 'Deleted successfully!'], 200);
     }
 
@@ -100,5 +102,14 @@ class PostController extends Controller
             $like->save();
         }
         return null;
+    }
+
+    public function postSession(Request $request)
+    {
+        $message = $request['message'];
+
+        Session::put('message', $message);
+        return response()->json(['message' => $message]);
+//        return redirect()->route('dashboard')->with(['message' => $message]);
     }
 }

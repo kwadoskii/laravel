@@ -28,15 +28,16 @@
     </div>
 </div>
 
+{{ Session::forget('message') }}
 @endif
 
 
-<div class="deltoast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000" data-amimate="true" style="position: fixed; top:30px; right: calc((100%/2) - 150px); z-index: 1050; width: 300px">
-    <div class="toast-header">
-        <img src="favicon.png" class="rounded mr-2" alt="...">
-        <strong class="mr-auto">Notification</strong>
-    </div>
-    <div class="toast-body">
-        <p class="notifp"></p>
-    </div>
-</div>
+{{--<div class="deltoast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000" data-amimate="true" style="position: fixed; top:30px; right: calc((100%/2) - 150px); z-index: 1050; width: 300px">--}}
+{{--    <div class="toast-header">--}}
+{{--        <img src="favicon.png" class="rounded mr-2" alt="...">--}}
+{{--        <strong class="mr-auto">Notification</strong>--}}
+{{--    </div>--}}
+{{--    <div class="toast-body">--}}
+{{--        <p class="notifp"></p>--}}
+{{--    </div>--}}
+{{--</div>--}}

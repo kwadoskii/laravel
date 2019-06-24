@@ -76,3 +76,8 @@ Route::post('/likepost', [
     'as' => 'likepost',
     'middleware' => 'auth'
 ]);
+
+Route::post('/notif', [
+    'uses' => 'PostController@postSession',
+    'as' => 'notif'
+]);

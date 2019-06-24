@@ -37,9 +37,16 @@ $('#modal-delete').on('click', function(){
    }).done(function(msg){
        $('#delete-modal').modal('hide');
        $(postBodyElement).hide();
-       $('.deltoast').find('.toast-body').find('.notifp').text(msg['message']);
+       // $('.deltoast').find('.toast-body').find('.notifp').text(msg['message']);
        // console.log(msg['message']);
-       $('.deltoast').toast('show');
+       // $('.deltoast').toast('show');
+       $.ajax({
+           method: 'POST',
+           url: urlNotif,
+           data: {message: msg['message'], _token: token}
+       }).done(function(mssg){
+           location.reload();
+       })
    });
 });
 

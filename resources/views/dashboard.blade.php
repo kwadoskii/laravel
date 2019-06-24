@@ -103,6 +103,7 @@
         var token = '{{ Session::token() }}';
         var urlEdit = '{{ route('editpost') }}';
         var urlLike = '{{ route('likepost') }}';
+        var urlNotif = '{{ route('notif') }}';
         $('.toast').toast('show');
         {{--var urlDelete = '{{ route('post.delete', ['post_id' => $post->id]) }}';--}}
     </script>
